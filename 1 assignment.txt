@@ -1,0 +1,168 @@
+Q1 - Write a program to check whether two numbers (entered by user) are equal or not
+#include<iostream>
+using namespace std;
+int main(){
+    int a;
+    cout<<"Enter A Value: ";
+    cin>>a;
+    int b;
+    cout<<"Enter B Value: ";
+    cin>>b;
+    
+    if(a==b){
+        cout<<"A and B are equal";
+    }else{
+        cout<<"A and B are not equal";
+    }
+ 
+    //if you want to get output as a boolean value then you print bool return 0 for flase or 1 is true
+    // if(a==b){
+    //     cout<<true;
+    // }else{
+    //     cout<<false;
+    // }
+    
+    return 0;
+}
+
+Q2 - Write a program to take the values of two variables a and b from the keyboard and then check if
+both the conditions 'a < 50' and 'a < b' are true.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a;
+    cout<<"Enter A value: ";
+    cin>>a;
+    int b;
+    cout<<"Enter B value: ";
+    cin>>b;
+    
+    if(a<50 && a<b){
+        cout<<true;
+    }else{
+        cout<<false;
+    }
+    return 0;
+}
+   
+
+
+Q3 - There are 45 total pupils in the class, 25 of whom are boys. Write a program to find how many
+girls received grades "A" if 17 boys made up 80% of the students that received grades "A".
+#include<iostream>
+using namespace std;
+int main(){
+    int total, boys, girls;
+    cout<<"Enter the total number of student: ";
+    cin>>total;
+    total= (80*(total))/100;
+    boys = 17;
+    girls = total - boys;
+    
+    cout<<"Total girls recieved A grade: "<<girls<<endl;
+    return 0;
+}
+
+Q4 - Write a program to calculate the sum of the first and the second last digit of a 5 digit number.
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a;
+    cout<<"Enter the 5 digit number: ";
+    cin>>a;
+   int sum;
+    int first = a/10000; //first digit
+    a = a%10000;
+    int second = a/1000; //second digit
+    a = a%1000;
+    int third = a/100; //third digit
+    a = a%100;
+    int fourth = a/10; //fourth digit
+    int fifth = a%10; 
+   sum= first+fourth;
+   cout<<"First and second last digit of sum is: "<<sum<<endl;
+   return 0;
+}
+
+
+
+Q5 - Write a program to calculate the sum of digits of a 3 digit number.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int num, first, second , third, sum;
+    cout<<"Enter the 3 digit number: ";
+    cin>>num;
+    
+    first = num/100;
+    num %= 100;
+    second = num/10;
+    num %= 10;
+    third = num/1;
+    num %= 1;
+    
+    sum = first + second + third;
+
+    cout<<"Total three digit sum: "<<sum<<endl;
+    
+    return 0;
+}
+
+
+
+Q6 - Design a calculator to perform basic arithmetic operations (+,-,/,*,%)
+#include<iostream>
+using namespace std;
+int main(){
+    char operators;
+    cout<<"Enter the following operators (+ - * / %): ";
+    cin>>operators;
+    float a, b;
+    int c, d;
+    
+    if(operators=='%'){
+         
+                    cout<<"Enter c value: ";
+                    cin>>c;
+                    cout<<"Enter d value: ";
+                    cin>>d;
+    }else{
+          
+          cout << "Enter the a value: ";
+          cin >> a;
+          cout<< "Enter the b value: ";
+          cin>>b;
+    }
+    
+    
+    
+    switch(operators){
+        case '+':
+                    cout << a << " + " << b << " = " << a + b;
+                     break;
+        case '-':
+                    cout << a << " - " << b << " = " << a - b;
+                     break;
+        case '*':
+                    cout << a << " * " << b << " = " << a * b;
+                     break;
+        case '/':
+                    cout << a << " / " << b << " = " << a / b;
+                     break;
+                    
+         case '%':  
+                   
+                    cout << c << " % " << d << " = " << c % d;
+                     break;
+                  
+        default: 
+                    cout<<"Enter the value by given instruction! ";
+                    break;
+    }
+    return 0;
+}
